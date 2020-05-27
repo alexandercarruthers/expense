@@ -2,7 +2,7 @@
 Module 2: App Development
 ## Certificate
 Udemy certificate is located within the screenshots folder
-![Udemy Certificate]( =250x250)
+![Udemy Certificate](https://github.com/alexandercarruthers/expense/blob/master/screenshots/udemy%20certificate.jpg?raw=true =250x250)
 ## Guide
 ### Add new expense
 1. User inputs the expense title
@@ -18,7 +18,7 @@ Are contained within the top level screenshot folder
 * Images taken from phone camera
 * Image timestamps from phone camera
 
-![Working Demo No Data](https://github.com/alexandercarruthers/expense/blob/master/screenshots/Working%20Demo%20No%20Data.png?raw=true)
-![Working Demo with data](https://github.com/alexandercarruthers/expense/blob/master/screenshots/Working%20Demo.png?raw=true)
-![Images taken from phone camera](https://github.com/alexandercarruthers/expense/blob/master/screenshots/Save%20to%20phone.png?raw=true)
-![Image timestamps from phone camera](https://github.com/alexandercarruthers/expense/blob/master/screenshots/Timestamps.png?raw=true)
+![Working Demo No Data](https://github.com/alexandercarruthers/expense/blob/master/screenshots/Working%20Demo%20No%20Data.png?raw=true =250x250)
+![Working Demo with data](https://github.com/alexandercarruthers/expense/blob/master/screenshots/Working%20Demo.png?raw=true =250x250)
+![Images taken from phone camera](https://github.com/alexandercarruthers/expense/blob/master/screenshots/Save%20to%20phone.png?raw=true =250x250)
+![Image timestamps from phone camera](https://github.com/alexandercarruthers/expense/blob/master/screenshots/Timestamps.png?raw=true =250x250)
