@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Expense Tracker
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-input
+      clearInput
+      type="text"
+      [(ngModel)]="expenseTitle"
+      placeholder="Title"
+    ></ion-input>
+    <ion-input
+      clearInput
+      type="number"
+      [(ngModel)]="expenseCost"
+      placeholder="Amount"
+    ></ion-input>
+    <ion-button clear (click)="openCam()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-button>
+    <div class="item-note" item-end>
+      <ion-button (click)="addTask()">
+        <ion-icon name="add-circle"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-item>
+  <ion-grid>
+    <ion-row no-padding *ngFor="let todo of expenses; let i = index">
+      <ion-col>
+        {{todo.title}}
+      </ion-col>
+      <ion-col>
+        {{ todo.cost / 100 | number:'1.2-2' | currency : 'GBP' }}
+      </ion-col>
+      <ion-col>
+        <img src="{{todo.img}}" />
+      </ion-col>
+      <ion-col>
+        <ion-button clear (click)="deleteTask(i)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        Total Expense Amount:  {{ totalCost / 100 | number:'1.2-2' | currency : 'GBP' }}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
