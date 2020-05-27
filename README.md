@@ -1,4 +1,4 @@
-# expensesApp
+# Expenses App
 Module 2: App Development
 ## Guide
 ### Add new expense
