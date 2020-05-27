@@ -2,7 +2,7 @@
 Module 2: App Development
 ## Certificate
 Udemy certificate is located within the screenshots folder
-![Udemy Certificate](https://github.com/alexandercarruthers/expense/blob/master/screenshots/udemy%20certificate.jpg?raw=true =250x250)
+<img src="https://github.com/alexandercarruthers/expense/blob/master/screenshots/udemy%20certificate.jpg?raw=true" width="40%">
 ## Guide
 ### Add new expense
 1. User inputs the expense title
