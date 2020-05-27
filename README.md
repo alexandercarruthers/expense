@@ -3,7 +3,7 @@ Module 2: App Development
 ## Certificate
 Udemy certificate is located within the screenshots folder
 
-<img src="https://github.com/alexandercarruthers/expense/blob/master/screenshots/udemy%20certificate.jpg?raw=true" width="40%">
+<img src="https://github.com/alexandercarruthers/expense/blob/master/screenshots/udemy%20certificate.jpg?raw=true" width="50%">
 
 ## Guide
 ### Add new expense
@@ -20,7 +20,7 @@ Are contained within the top level screenshot folder
 * Images taken from phone camera
 * Image timestamps from phone camera
 
-<img src="https://github.com/alexandercarruthers/expense/blob/master/screenshots/Working%20Demo%20No%20Data.png?raw=true" width="40%">
-<img src="https://github.com/alexandercarruthers/expense/blob/master/screenshots/Working%20Demo.png?raw=true" width="40%">
-<img src="https://github.com/alexandercarruthers/expense/blob/master/screenshots/Save%20to%20phone.png?raw=true" width="40%">
-<img src="https://github.com/alexandercarruthers/expense/blob/master/screenshots/Timestamps.png?raw=true" width="40%">
+<img src="https://github.com/alexandercarruthers/expense/blob/master/screenshots/Working%20Demo%20No%20Data.png?raw=true" width="30%">
+<img src="https://github.com/alexandercarruthers/expense/blob/master/screenshots/Working%20Demo.png?raw=true" width="30%">
+<img src="https://github.com/alexandercarruthers/expense/blob/master/screenshots/Save%20to%20phone.png?raw=true" width="30%">
+<img src="https://github.com/alexandercarruthers/expense/blob/master/screenshots/Timestamps.png?raw=true" width="30%">
