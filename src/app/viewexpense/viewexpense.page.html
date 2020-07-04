@@ -1,9 +1,46 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>viewexpense</ion-title>
+    <ion-title>View Expense Details </ion-title>   
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-grid>
+    <ion-row>
+      <ion-col>Title</ion-col><ion-col>{{expense.title}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>Amount</ion-col
+      ><ion-col
+        >{{ expense.cost / 100 | number:'1.2-2' | currency : 'GBP' }}</ion-col
+      >
+    </ion-row>
+    <ion-row>
+      <ion-col>Expense Date / Time</ion-col
+      ><ion-col
+        >{{expense.expenseDateTime | date: "dd/MM/yyyy 'at' h:mma"}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>Submitted Date / Time</ion-col
+      ><ion-col>
+        {{expense.submitted_date | date:"dd/MM/yyyy 'at' h:mma"}}</ion-col
+      >
+    </ion-row>
+    <ion-row>
+      <ion-col>Receipt Image</ion-col
+      ><ion-col>
+        <img src="{{expense.img}}" />{{expense.img === '' ? 'No Image Added' :
+        ''}}</ion-col
+      >
+    </ion-row>
+    <ion-row><ion-col></ion-col></ion-row>
+  </ion-grid>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button clear (click)="goAnOtherPage()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

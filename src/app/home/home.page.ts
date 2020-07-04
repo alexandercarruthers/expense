@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Router, NavigationExtras } from '@angular/router';
 import { NavController, AlertController } from "@ionic/angular";
 import { Camera, CameraOptions } from "@ionic-native/camera/ngx";
 import { DatePicker } from "@ionic-native/date-picker";
@@ -16,6 +17,7 @@ export class HomePage {
   expenseCost: number;
   expenseDate: any;
   expenseTime: any;
+  expenseDateTime: any;
   image: any = "";
 
   storageItems: Array<any>;
@@ -24,7 +26,8 @@ export class HomePage {
     public navCtrl: NavController,
     public alertCtrl: AlertController,
     private camera: Camera,
-    private storage: Storage
+    private storage: Storage,
+    private router: Router
   ) {
     //populate local
     this.storageItems = [];
@@ -33,8 +36,7 @@ export class HomePage {
     });
   }
 
-  ionViewWillEnter(){
-    console.log("ionviewillenter")
+  ionViewWillEnter(){    
     this.updateCost();
   }
 
@@ -62,6 +64,7 @@ export class HomePage {
   }
 
   addTask() {
+    
     let obj = {
       id: Math.random().toString(36).substr(2, 5),
       title: this.expenseTitle,
@@ -69,8 +72,10 @@ export class HomePage {
       img: this.image,
       expense_time: this.expenseTime,
       expense_date: this.expenseDate,
+      expenseDateTime: this.expenseDateTime,
       submitted_date: new Date(),
     };
+    console.log(obj)
     //local
     this.storageItems.push(obj);
     //storage
@@ -80,11 +85,12 @@ export class HomePage {
     this.clearInputs();
   }
 
+ 
   clearInputs() {
     this.expenseTitle = "";
     this.expenseCost = NaN;
-    this.expenseDate = "";
-    this.expenseTime = "";
+    this.expenseDateTime = "";    
+    this.image = null;
   }
 
   deleteAllExpenses() {
@@ -114,4 +120,14 @@ export class HomePage {
     //update cost
     this.updateCost();
   }
+
+  openDetailsWithQueryParams(expenseObj) {
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        special: JSON.stringify(expenseObj)
+      }
+    };
+    this.router.navigate(['viewexpense'], navigationExtras);
+  }
+
 }

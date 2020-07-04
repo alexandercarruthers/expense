@@ -25,74 +25,72 @@
           placeholder="Amount"
         ></ion-input>
       </ion-col>
-      <ion-input
-        clearInput
-        type="date"
-        [(ngModel)]="expenseDate"
-        placeholder=""
-      ></ion-input>
+    </ion-row>
+    <ion-row>
       <ion-col>
-        <ion-input
-          clearInput
-          type="time"
-          [(ngModel)]="expenseTime"
-          placeholder=""
-        ></ion-input>
+        <ion-item>
+          <ion-label
+            >Date / Time <ion-icon name="calendar"></ion-icon
+          ></ion-label>
+          <ion-datetime
+            displayFormat="D MMM YYYY H:mm"
+            [(ngModel)]="expenseDateTime"
+           
+           
+            
+          ></ion-datetime>
+        </ion-item>      
       </ion-col>
+    </ion-row>
+    <ion-row>
       <ion-col>
-        submitted date/time
-      </ion-col>
-      <ion-col>
-        <ion-button clear (click)="openCam()">
+        <ion-button clear (click)="openCam()"
+          >Add Receipt Image
           <ion-icon name="camera"></ion-icon>
         </ion-button>
       </ion-col>
       <ion-col>
-        <ion-button clear (click)="addTask()">
+        <img src="{{image}}" />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button clear (click)="addTask()"
+          >Add Expense
           <ion-icon name="add-circle"></ion-icon>
         </ion-button>
       </ion-col>
-      <ion-col>
-        delete
-      </ion-col>
     </ion-row>
+  </ion-grid>
+
+  <ion-grid>
     <ion-row *ngFor="let expense of storageItems; let i = index">
-      <ion-col>
-        {{expense.title}}
+      <ion-col  size="auto">
+        <ion-button clear (click)="openDetailsWithQueryParams(expense)"
+          >{{expense.title}}
+        </ion-button>
       </ion-col>
       <ion-col>
         {{ expense.cost / 100 | number:'1.2-2' | currency : 'GBP' }}
       </ion-col>
       <ion-col>
-        {{expense.expense_date}}
+        {{expense.expenseDateTime | date: "dd/MM/yyyy 'at' h:mma"}}
       </ion-col>
-      <ion-col>
-        {{expense.expense_time}}
-      </ion-col>
-      <ion-col>
-        {{expense.submitted_date}}
-      </ion-col>
-      <ion-col>
-        <img src="{{expense.img}}" />
-      </ion-col>
-      <ion-col>
+      <ion-col size="auto">
         <ion-button clear (click)="deleteTask(i)">
           <ion-icon name="trash"></ion-icon>
         </ion-button>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col>
-        Total Expense Amount: {{  totalCost / 100 | number:'1.2-2' | currency : 'GBP' }} 
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        delete all button
-        <ion-button clear (click)="deleteAllExpenses()">
-          <ion-icon name="trash"></ion-icon>
-        </ion-button>
-      </ion-col>
-    </ion-row>
   </ion-grid>
+  <ion-note color="primary">Total Expense Cost: {{totalCost / 100 | number:'1.2-2' | currency : 'GBP' }}</ion-note>
+  
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button clear (click)="deleteAllExpenses()"
+      >Delete All Expenses
+      <ion-icon name="trash"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
